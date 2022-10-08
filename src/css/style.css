@@ -1,0 +1,643 @@
+/* Stle reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/Roboto-Regular.ttf);
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+img:hover,
+.full-name:hover,
+.user-name:hover {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-flex {
+  max-width: 1350px;
+  margin: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.left-flex {
+  flex: 1 0 22%;
+  height: 100%;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid rgb(230, 236, 240);
+}
+
+.center-flex {
+  flex: 3 0 45%;
+  background: #fff;
+}
+
+.right-flex {
+  flex: 2 0 31%;
+  height: 100%;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-left: 1px solid rgb(230, 236, 240);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.MainLeft {
+  min-height: 100vh;
+  width: 260px;
+  background: var(--background);
+  border-right: 1px solid rgba(255, 255, 255, 0.1333333333);
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* SUB MENU */
+}
+.MainLeft-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 100;
+}
+.MainLeft-nav-li {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 8px 8px 4px 10px;
+  border-radius: 50%;
+}
+.MainLeft-nav-li:hover {
+  background-color: #fff;
+}
+.MainLeft-nav-li a {
+  text-decoration: none;
+  color: gray;
+}
+.MainLeft-nav-li a ion-icon {
+  font-size: 30px;
+}
+.MainLeft-item {
+  padding: 8px 25px 8px 10px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+.MainLeft-item:hover {
+  background: rgb(49, 49, 243);
+}
+.MainLeft-icon {
+  margin-right: 15px;
+}
+.MainLeft-icon ion-icon {
+  font-size: 26px;
+  --ionicon-stroke-width: 30px;
+}
+.MainLeft-icon.home {
+  font-size: 24px;
+}
+.MainLeft-icon.hash {
+  padding: 0 2px;
+  font-size: 30px;
+  font-weight: 300;
+}
+.MainLeft a.tweet-btn {
+  display: block;
+  width: 230px;
+  background: rgba(27, 141, 218, 0.9333333333);
+  color: wheat;
+  text-align: center;
+  padding: 15px;
+  margin-top: 5px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.MainLeft a.tweet-btn:hover {
+  background-color: aqua;
+}
+.MainLeft a.tweet-btn ion-icon {
+  font-size: 20px;
+  color: #fff;
+  display: none;
+}
+.MainLeft-profile-btn:hover {
+  background: var(--itemBackground);
+}
+.MainLeft-profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.MainLeft img.profile-img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.MainLeft-profile-info .name {
+  font-weight: bold;
+  line-height: 1.5;
+}
+.MainLeft-profile-info .username {
+  color: var(--colorSecondary);
+}
+.MainLeft-option-icon ion-icon {
+  font-size: 16px;
+  margin-top: 2px;
+}
+.MainLeft .MainLeft-sub {
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  background: var(--background);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3333333333);
+  width: 190px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: none;
+  z-index: 100;
+}
+.MainLeft .MainLeft-sub.active {
+  display: block;
+}
+.MainLeft .MainLeft-sub-item {
+  padding: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+.MainLeft .MainLeft-sub-item:hover {
+  background: #15181c;
+}
+.MainLeft .MainLeft-sub-item.MainLeft-link {
+  font-size: 14px;
+}
+.MainLeft .MainLeft-sub-item-MainLeft-icon {
+  margin-right: 10px;
+}
+.MainLeft .MainLeft-sub-item-MainLeft-icon .MainLeft-sub-item .MainLeft-icon ion-icon {
+  font-size: 18px;
+}
+.MainLeft .config {
+  padding-top: 2px;
+  margin-top: 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1333333333);
+}
+.MainLeft .overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  display: none;
+  z-index: 10;
+}
+.MainLeft .overlay.active {
+  display: block;
+}
+
+/* FIN DEL MENU DE NAVEGACION IZQUIERDO  */
+.mainCenter-home {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid rgb(230, 236, 240);
+  color: #39393a;
+  padding: 0.5rem 1rem;
+}
+.mainCenter-home h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.mainCenter-home i {
+  font-size: 1.4rem;
+  color: rgb(29, 161, 242);
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.mainCenter-home i:hover {
+  background: rgba(29, 161, 242, 0.1);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* caaja de tweet */
+.post-tweet {
+  background: #fff;
+  border-bottom: 10px solid rgb(230, 236, 240);
+}
+.post-tweet .form-group-1 {
+  display: flex;
+  flex-flow: row;
+  padding: 0.3rem 1rem;
+}
+.post-tweet img {
+  display: inline-block;
+  margin-right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-self: center;
+}
+.post-tweet input {
+  width: 90%;
+  height: 60px;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.post-tweet input::placeholder {
+  color: rgba(123, 124, 126, 0.719);
+}
+.post-tweet input:focus {
+  outline: none;
+}
+.post-tweet .form-group-2 {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8rem;
+}
+.post-tweet .post-icons {
+  padding-left: 4rem;
+  color: #1da1f2;
+}
+.post-tweet .post-icons i {
+  padding-right: 10px;
+  font-size: 1.4rem;
+}
+.post-tweet .post-icons i:hover {
+  color: rgba(29, 160, 242, 0.7607843137);
+  cursor: pointer;
+}
+.post-tweet .post-icons .btn {
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.7rem 1rem;
+  background: #8ed0f9;
+  color: #fff;
+  border-radius: 25px;
+  margin-right: 1rem;
+}
+.post-tweet .post-icons .btn:hover {
+  background: #1da1f2;
+  cursor: pointer;
+}
+.post-tweet .post-icons .btn:focus {
+  outline: none;
+}
+
+/* contenido de usuarios */
+.tweets {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  font-size: 15px;
+  width: 100%;
+  line-height: 1.75rem;
+  padding-top: 0.5rem;
+  border-bottom: 1px solid rgb(230, 236, 240);
+}
+.tweets img {
+  display: block;
+  width: 100%;
+}
+.tweets:hover {
+  background: rgb(245, 248, 250);
+}
+.tweets .user-pics img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0.5rem 1rem;
+}
+.tweets .full-name:hover {
+  text-decoration: underline;
+}
+.tweets .user-content img {
+  border-radius: 20px;
+}
+.tweets .user-content {
+  font-family: "Roboto";
+  padding-right: 1rem;
+  color: rgb(48, 52, 56);
+  font-weight: 400;
+  line-height: 1.5;
+}
+.tweets .user-content a {
+  color: rgb(27, 149, 224);
+}
+.tweets .user-content-box {
+  display: flex;
+  flex-flow: column nowrap;
+  color: rgb(20, 23, 26);
+}
+.tweets .user-content-box .user-names {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.tweets .user-content-box .user-names .full-name {
+  padding-right: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(20, 23, 26);
+}
+.tweets .user-content-box .user-names .user-name {
+  padding-right: 10px;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: rgb(101, 119, 134);
+}
+.tweets .user-content-box .user-names i {
+  padding-top: 0.6rem;
+  margin-left: 50%;
+  color: rgb(101, 119, 134);
+}
+.tweets .user-content-box .time {
+  color: rgb(101, 119, 134);
+}
+.tweets .user-content-box .content-icons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem 4rem 1rem 0;
+}
+.tweets .user-content-box .content-icons i {
+  color: rgb(101, 119, 134);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.tweets .user-content-box .content-icons i:last-child {
+  font-size: 14px;
+}
+
+/* SUGERENCIAS A SEGUIR */
+.follow-users-box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  font-size: 15px;
+  width: 100%;
+  line-height: 1.5rem;
+}
+.follow-users-box .related-followers .sub-text {
+  font-size: 14px;
+  padding-left: 2.1rem;
+}
+.follow-users-box .related-followers i {
+  font-size: 0.7rem;
+  padding-right: 8px;
+}
+.follow-users-box .follow-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgb(230, 236, 240);
+  border-top: 10px solid rgb(230, 236, 240);
+}
+.follow-users-box .follow-header .main-text {
+  font-size: 19px;
+  font-weight: 800;
+}
+.follow-users-box .follow-header i {
+  font-size: 13px;
+  align-self: center;
+  cursor: pointer;
+}
+.follow-users-box .full-name h1:hover {
+  text-decoration: underline;
+}
+.follow-users-box .user-name .sub-text {
+  font-size: 17px;
+  color: rgb(101, 119, 134);
+}
+.follow-users-box .user-profile {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.follow-users-box .user-profile img {
+  display: inline-block;
+  margin-right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-self: center;
+}
+.follow-users-box .user-profile-content {
+  width: 100%;
+  padding-bottom: 0.3rem;
+}
+.follow-users-box .follow-user {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid rgb(230, 236, 240);
+}
+.follow-users-box .follow-user:hover {
+  background: rgb(245, 248, 250);
+}
+.follow-users-box .title-container {
+  display: flex;
+  justify-content: space-between;
+}
+.follow-users-box .bio-container {
+  font-family: "Roboto";
+}
+.follow-users-box .bio-container a {
+  color: rgb(29, 161, 242);
+}
+.follow-users-box .bio-container a:hover {
+  text-decoration: underline;
+}
+.follow-users-box .user-content a:hover {
+  text-decoration: underline;
+}
+.follow-users-box .follow-btn a {
+  font-weight: bold;
+  color: rgb(29, 161, 242);
+  background: #fff;
+  padding: 0.3rem 1.1rem;
+  border: 1px solid rgb(29, 161, 242);
+  border-radius: 25px;
+}
+.follow-users-box .follow-btn a:hover {
+  background: rgba(29, 161, 242, 0.1);
+}
+.follow-users-box .follow-footer {
+  padding: 1rem;
+  background: #fff;
+  border-bottom: 1px solid rgb(230, 236, 240);
+}
+.follow-users-box .follow-footer a {
+  color: rgb(29, 161, 242);
+  font-size: 15px;
+  font-weight: 400;
+}
+.follow-users-box .follow-footer:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+.follow-users-box .load-more {
+  margin: 1rem 0;
+  text-align: center;
+}
+.follow-users-box .load-more a {
+  color: #fff;
+  background: #1da1f2;
+  padding: 0.3rem 1rem;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+.follow-users-box .load-more a:hover {
+  background: #198ed6;
+}
+
+.search-box {
+  border: none;
+  border-radius: 25px;
+  padding: 0.1rem 1rem;
+  background: rgb(230, 236, 240);
+  margin-top: 0.5rem;
+  white-space: nowrap;
+}
+.search-box i {
+  color: rgb(101, 119, 134);
+  font-size: 0.9rem;
+}
+.search-box input {
+  padding: 0.8rem 8rem 0.8rem 0.2rem;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  font-size: 0.9rem;
+  background: rgb(230, 236, 240);
+}
+
+/* TENDENCIAS */
+/* Trending Nav Items */
+.nav-list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgb(230, 236, 240);
+}
+.nav-list :hover {
+  background: rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+.nav-list a {
+  color: rgb(27, 149, 224);
+}
+.nav-list:last-child {
+  font-size: 1rem;
+  border-bottom: none;
+}
+.nav-list .trend-icon {
+  font-size: 13px;
+  color: rgb(101, 119, 134);
+}
+
+.trend-list {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.main-text {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(20, 23, 26);
+}
+
+.sub-text {
+  font-size: 13px;
+  color: rgb(101, 119, 134);
+}
+
+.trends {
+  background: rgb(245, 248, 250);
+  display: flex;
+  flex-flow: column nowrap;
+  width: 80%;
+  border-radius: 15px;
+  margin-top: 1rem;
+}
+.trends .header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgb(230, 236, 240);
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid rgb(230, 236, 240);
+}
+.trends .header h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.right-footer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.right-footer .footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+}
+.right-footer .footer-links a:hover {
+  text-decoration: underline;
+}
+.right-footer .footer-links i {
+  padding: 0.4rem;
+  border-radius: 50%;
+}
+.right-footer .footer-links i:hover {
+  background: rgb(245, 248, 250);
+  padding: 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.right-footer .footer-copyright {
+  align-self: flex-start;
+}
+
+/*# sourceMappingURL=style.css.map */
