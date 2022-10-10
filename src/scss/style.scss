@@ -192,9 +192,9 @@ ul {
   /* SUB MENU */
   .MainLeft-sub {
     position: absolute;
-    bottom: 20px;
+    top: 1rem;
     left: 0px;
-    background: var(--background);
+    background: $primary-clr;
     box-shadow: 0 0 10px $text-secundary-clr;
     width: 190px;
     border-radius: 5px;
@@ -202,17 +202,14 @@ ul {
     display: none;
     z-index: 100;
 
-    &.active {
-      display: block;
-    }
     &-item {
-      padding: 12px;
+      padding: 20px 12px;
       display: flex;
       justify-content: flex-start;
       align-items: center;
       cursor: pointer;
       &:hover {
-        background: #15181c;
+        background: $secondary-clr;
       }
       &.MainLeft-link {
         font-size: 14px;
@@ -223,6 +220,9 @@ ul {
           font-size: 18px;
         }
       }
+      a {
+        color: $text-primary-clr;
+      }
     }
   }
   .config {
@@ -231,15 +231,7 @@ ul {
     border-top: 1px solid $Search-clr;
   }
 
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: transparent;
-    display: none;
-    z-index: 10;
-  }
-
-  .overlay.active {
+  .active {
     display: block;
   }
 }

@@ -183,9 +183,9 @@ ul {
 }
 .MainLeft .MainLeft-sub {
   position: absolute;
-  bottom: 20px;
+  top: 1rem;
   left: 0px;
-  background: var(--background);
+  background: #15202b;
   box-shadow: 0 0 10px rgb(115, 129, 141);
   width: 190px;
   border-radius: 5px;
@@ -193,18 +193,15 @@ ul {
   display: none;
   z-index: 100;
 }
-.MainLeft .MainLeft-sub.active {
-  display: block;
-}
 .MainLeft .MainLeft-sub-item {
-  padding: 12px;
+  padding: 20px 12px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
 }
 .MainLeft .MainLeft-sub-item:hover {
-  background: #15181c;
+  background: #1e2732;
 }
 .MainLeft .MainLeft-sub-item.MainLeft-link {
   font-size: 14px;
@@ -215,19 +212,15 @@ ul {
 .MainLeft .MainLeft-sub-item-MainLeft-icon .MainLeft-sub-item .MainLeft-icon ion-icon {
   font-size: 18px;
 }
+.MainLeft .MainLeft-sub-item a {
+  color: rgb(247, 249, 249);
+}
 .MainLeft .config {
   padding-top: 2px;
   margin-top: 2px;
   border-top: 1px solid #273340;
 }
-.MainLeft .overlay {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  display: none;
-  z-index: 10;
-}
-.MainLeft .overlay.active {
+.MainLeft .active {
   display: block;
 }
 
