@@ -1,3 +1,4 @@
+@import 'imports/variables';
 /* Stle reset */
 * {
   margin: 0;
@@ -5,14 +6,11 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Roboto';
-  src: url(../assets/Roboto-Regular.ttf);
-}
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.2rem;
   line-height: 1.6;
+  background-color: $primary-clr;
 }
 
 a {
@@ -40,16 +38,15 @@ ul {
   height: 100%;
   position: sticky;
   top: 0;
-  background: #fff;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid rgb(230, 236, 240);
 }
 .center-flex {
   flex: 3 0 45%;
-  background: #fff;
+  border-right: 1px solid $text-secundary-clr;
+  border-left: 1px solid $text-secundary-clr;
 }
 .right-flex {
   flex: 2 0 31%;
@@ -57,8 +54,6 @@ ul {
   width: 100%;
   position: sticky;
   top: 0;
-  background: #fff;
-  border-left: 1px solid rgb(230, 236, 240);
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -67,13 +62,11 @@ ul {
 //************************ MENU DE NAVEGACION IZQUIERDO **************************\\
 .MainLeft {
   min-height: 100vh;
-  width: 260px;
-  background: var(--background);
-  border-right: 1px solid #fff2;
-  padding: 10px 0;
+  padding: 10px 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0 0 0 30px;
 
   &-nav {
     position: relative;
@@ -90,25 +83,32 @@ ul {
     padding: 8px 8px 4px 10px;
     border-radius: 50%;
     &:hover {
-      background-color: #fff;
+      background-color: $text-primary-clr;
     }
     a {
       text-decoration: none;
-      color: gray;
+      color: $links-clr;
       ion-icon {
         font-size: 30px;
       }
     }
   }
   &-item {
+    margin-bottom: 5px;
     padding: 8px 25px 8px 10px;
     border-radius: 50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
+
     &:hover {
-      background: rgb(49, 49, 243);
+      background: $secondary-clr;
+    }
+    a {
+      color: $text-primary-clr;
+      font-weight: 500;
+      font-size: 1.3rem;
     }
   }
   &-icon {
@@ -116,6 +116,7 @@ ul {
     ion-icon {
       font-size: 26px;
       --ionicon-stroke-width: 30px;
+      color: $text-primary-clr;
     }
     &.home {
       font-size: 24px;
@@ -124,59 +125,71 @@ ul {
       padding: 0 2px;
       font-size: 30px;
       font-weight: 300;
+      color: $text-primary-clr;
     }
   }
 
-  a.tweet-btn {
+  .tweet-btn {
     display: block;
     width: 230px;
-    background: #1b8ddaee;
-    color: wheat;
+    background: $links-clr;
+    color: $text-primary-clr;
     text-align: center;
     padding: 15px;
     margin-top: 5px;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
   }
 
   a.tweet-btn:hover {
-    background-color: aqua;
+    background-color: $links-clr-hover;
   }
 
   a.tweet-btn ion-icon {
     font-size: 20px;
-    color: #fff;
+    color: $text-secundary-clr;
     display: none;
   }
-
-  &-profile-btn:hover {
-    background: var(--itemBackground);
+  /* perfil */
+  &-profile-btn {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    &:hover {
+      background: var(--itemBackground);
+    }
   }
 
   &-profile-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: $text-primary-clr;
   }
 
-  img.profile-img {
+  .profile-img {
     border-radius: 50%;
     margin-right: 10px;
   }
 
-  &-profile-info .name {
+  .MainLeft-profile-info .name {
     font-weight: bold;
     line-height: 1.5;
   }
 
-  &-profile-info .username {
-    color: var(--colorSecondary);
+  .MainLeft-profile-info .username {
+    color: $text-secundary-clr;
   }
 
-  &-option-icon ion-icon {
-    font-size: 16px;
+  .MainLeft-option-icon ion-icon {
+    font-size: 18px;
     margin-top: 2px;
+    color: $text-primary-clr;
   }
 
   /* SUB MENU */
@@ -185,7 +198,7 @@ ul {
     bottom: 20px;
     left: 0px;
     background: var(--background);
-    box-shadow: 0 0 10px #fff5;
+    box-shadow: 0 0 10px $text-secundary-clr;
     width: 190px;
     border-radius: 5px;
     overflow: hidden;
@@ -218,7 +231,7 @@ ul {
   .config {
     padding-top: 2px;
     margin-top: 2px;
-    border-top: 1px solid #fff2;
+    border-top: 1px solid $Search-clr;
   }
 
   .overlay {
@@ -233,6 +246,7 @@ ul {
     display: block;
   }
 }
+
 /* FIN DEL MENU DE NAVEGACION IZQUIERDO  */
 
 //****************** SECCION CENTRO *********************\\
@@ -242,22 +256,21 @@ ul {
   justify-content: space-between;
   position: sticky;
   top: 0;
-  background: #fff;
-  border-bottom: 1px solid rgb(230, 236, 240);
-  color: #39393a;
+  color: $text-primary-clr;
   padding: 0.5rem 1rem;
+  background: rgba(21, 32, 43, 0.204);
+  backdrop-filter: blur(10px);
   h1 {
     font-size: 1.2rem;
     font-weight: 800;
   }
   i {
     font-size: 1.4rem;
-    color: rgba(29, 161, 242, 1);
-    background: #fff;
+    color: $links-clr;
     padding: 0.5rem;
     border-radius: 50%;
     &:hover {
-      background: rgba(29, 161, 242, 0.1);
+      background: $secondary-clr;
       padding: 0.5rem;
       border-radius: 50%;
       cursor: pointer;
@@ -268,8 +281,8 @@ ul {
 /* caaja de tweet */
 
 .post-tweet {
-  background: #fff;
-  border-bottom: 10px solid rgb(230, 236, 240);
+  background: $primary-clr;
+  border-bottom: 1px solid $text-secundary-clr;
   .form-group-1 {
     display: flex;
     flex-flow: row;
@@ -284,6 +297,7 @@ ul {
     align-self: center;
   }
   input {
+    background: $primary-clr;
     width: 90%;
     height: 60px;
     padding: 0.5rem 1rem;
@@ -291,7 +305,7 @@ ul {
     font-size: 1.2rem;
     font-weight: 300;
     &::placeholder {
-      color: rgba(123, 124, 126, 0.719);
+      color: $text-secundary-clr;
     }
     &:focus {
       outline: none;
@@ -304,26 +318,13 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0.8rem;
-  }
-
-  .post-icons {
-    padding-left: 4rem;
-    color: #1da1f2;
-    i {
-      padding-right: 10px;
-      font-size: 1.4rem;
-      &:hover {
-        color: #1da0f2c2;
-        cursor: pointer;
-      }
-    }
     .btn {
       border: none;
       font-weight: 600;
       font-size: 1rem;
       padding: 0.7rem 1rem;
-      background: #8ed0f9;
-      color: #fff;
+      background: $links-clr;
+      color: $text-primary-clr;
       border-radius: 25px;
       margin-right: 1rem;
       &:hover {
@@ -332,6 +333,19 @@ ul {
       }
       &:focus {
         outline: none;
+      }
+    }
+  }
+
+  .post-icons {
+    padding-left: 4rem;
+    color: $links-clr;
+    i {
+      padding-right: 10px;
+      font-size: 1.4rem;
+      &:hover {
+        color: $links-clr-hover;
+        cursor: pointer;
       }
     }
   }
@@ -346,13 +360,13 @@ ul {
   width: 100%;
   line-height: 1.75rem;
   padding-top: 0.5rem;
-  border-bottom: 1px solid rgb(230, 236, 240);
+  border-bottom: 1px solid $Search-clr;
   img {
     display: block;
     width: 100%;
   }
   &:hover {
-    background: rgb(245, 248, 250);
+    background: $secondary-clr;
   }
   .user-pics img {
     display: block;
@@ -374,15 +388,16 @@ ul {
     color: rgb(48, 52, 56);
     font-weight: 400;
     line-height: 1.5;
+    color: $text-primary-clr;
   }
   .user-content a {
-    color: rgb(27, 149, 224);
+    color: $links-clr;
   }
 
   .user-content-box {
     display: flex;
     flex-flow: column nowrap;
-    color: rgb(20, 23, 26);
+    color: $secondary-clr;
     .user-names {
       display: flex;
       flex-flow: row nowrap;
@@ -390,22 +405,22 @@ ul {
         padding-right: 10px;
         font-size: 1rem;
         font-weight: 700;
-        color: rgb(20, 23, 26);
+        color: $text-primary-clr;
       }
       .user-name {
         padding-right: 10px;
         font-size: 1.05rem;
         font-weight: 400;
-        color: rgb(101, 119, 134);
+        color: $text-secundary-clr;
       }
       i {
         padding-top: 0.6rem;
         margin-left: 50%;
-        color: rgb(101, 119, 134);
+        color: $text-secundary-clr;
       }
     }
     .time {
-      color: rgb(101, 119, 134);
+      color: $text-secundary-clr;
     }
 
     .content-icons {
@@ -415,7 +430,7 @@ ul {
       align-items: flex-start;
       padding: 1rem 4rem 1rem 0;
       i {
-        color: rgb(101, 119, 134);
+        color: $text-secundary-clr;
         font-size: 1rem;
         cursor: pointer;
         &:last-child {
@@ -447,8 +462,8 @@ ul {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgb(230, 236, 240);
-    border-top: 10px solid rgb(230, 236, 240);
+    border-bottom: 1px solid $Search-clr;
+    border-top: 10px solid $Search-clr;
     .main-text {
       font-size: 19px;
       font-weight: 800;
@@ -464,7 +479,7 @@ ul {
   }
   .user-name .sub-text {
     font-size: 17px;
-    color: rgb(101, 119, 134);
+    color: $text-secundary-clr;
   }
   .user-profile {
     display: flex;
@@ -486,10 +501,10 @@ ul {
     display: flex;
     flex-flow: column nowrap;
     padding: 0.4rem 1rem;
-    border-bottom: 1px solid rgb(230, 236, 240);
+    border-bottom: 1px solid $Search-clr;
 
     &:hover {
-      background: rgb(245, 248, 250);
+      background: $secondary-clr;
     }
   }
   .title-container {
@@ -499,7 +514,7 @@ ul {
   .bio-container {
     font-family: 'Roboto';
     a {
-      color: rgb(29, 161, 242);
+      color: $links-clr;
       &:hover {
         text-decoration: underline;
       }
@@ -510,21 +525,22 @@ ul {
   }
   .follow-btn a {
     font-weight: bold;
-    color: rgb(29, 161, 242);
-    background: #fff;
+    color: $links-clr;
+    background: $btn-secundary;
     padding: 0.3rem 1.1rem;
-    border: 1px solid rgba(29, 161, 242, 1);
+    border: 1px solid $links-clr;
     border-radius: 25px;
     &:hover {
       background: rgba(29, 161, 242, 0.1);
     }
   }
   .follow-footer {
+    text-align: center;
     padding: 1rem;
-    background: #fff;
-    border-bottom: 1px solid rgb(230, 236, 240);
+    background: $Search-clr;
+    border-bottom: 1px solid $btn-secundary;
     a {
-      color: rgb(29, 161, 242);
+      color: $links-clr;
       font-size: 15px;
       font-weight: 400;
     }
@@ -532,33 +548,33 @@ ul {
       background: rgba(0, 0, 0, 0.03);
     }
   }
-  .load-more {
-    margin: 1rem 0;
-    text-align: center;
-    a {
-      color: #fff;
-      background: #1da1f2;
-      padding: 0.3rem 1rem;
-      border-radius: 25px;
-      font-size: 1rem;
-      &:hover {
-        background: #198ed6;
-      }
+}
+
+.load-more {
+  margin: 1rem 0;
+  text-align: center;
+  a {
+    color: $text-primary-clr;
+    background: $links-clr;
+    padding: 0.3rem 1rem;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    &:hover {
+      background: $links-clr-hover;
     }
   }
 }
-
 //***************** MAVEGACION DE LA DERECHA *********************\\
 
 .search-box {
   border: none;
   border-radius: 25px;
   padding: 0.1rem 1rem;
-  background: rgb(230, 236, 240);
+  background: $Search-clr;
   margin-top: 0.5rem;
   white-space: nowrap;
   i {
-    color: rgb(101, 119, 134);
+    color: $text-secundary-clr;
     font-size: 0.9rem;
   }
   input {
@@ -567,7 +583,7 @@ ul {
     outline: none;
     border: none;
     font-size: 0.9rem;
-    background: rgb(230, 236, 240);
+    background: $Search-clr;
   }
 }
 
@@ -579,14 +595,14 @@ ul {
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid rgb(230, 236, 240);
+  border-bottom: 1px solid $btn-secundary;
 
   :hover {
-    background: rgba(0, 0, 0, 0.03);
+    background: $secondary-clr;
     cursor: pointer;
   }
   a {
-    color: rgb(27, 149, 224);
+    color: $links-clr;
   }
   &:last-child {
     font-size: 1rem;
@@ -594,7 +610,7 @@ ul {
   }
   .trend-icon {
     font-size: 13px;
-    color: rgb(101, 119, 134);
+    color: $text-secundary-clr;
   }
 }
 .trend-list {
@@ -605,16 +621,16 @@ ul {
 .main-text {
   font-size: 15px;
   font-weight: bold;
-  color: rgb(20, 23, 26);
+  color: $text-primary-clr;
 }
 
 .sub-text {
   font-size: 13px;
-  color: rgb(101, 119, 134);
+  color: $text-secundary-clr;
 }
 
 .trends {
-  background: rgb(245, 248, 250);
+  background: $secondary-clr;
   display: flex;
   flex-flow: column nowrap;
   width: 80%;
@@ -627,12 +643,13 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 0.3rem;
-    border-bottom: 1px solid rgb(230, 236, 240);
+    border-bottom: 1px solid $btn-secundary;
     padding: 0.5rem 1rem;
-    border-bottom: 1px solid rgb(230, 236, 240);
+    border-bottom: 1px solid $btn-secundary;
     h2 {
       font-size: 1.2rem;
       font-weight: 800;
+      color: $text-primary-clr;
     }
   }
 }
@@ -655,7 +672,7 @@ ul {
       padding: 0.4rem;
       border-radius: 50%;
       &:hover {
-        background: rgb(245, 248, 250);
+        background: $btn-secundary;
         padding: 0.4rem;
         border-radius: 50%;
         cursor: pointer;
