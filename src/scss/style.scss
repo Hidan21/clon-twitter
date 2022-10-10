@@ -34,7 +34,6 @@ ul {
   justify-content: center;
 }
 .left-flex {
-  flex: 1 0 22%;
   height: 100%;
   position: sticky;
   top: 0;
@@ -44,14 +43,12 @@ ul {
   align-items: center;
 }
 .center-flex {
-  flex: 3 0 45%;
   border-right: 1px solid $text-secundary-clr;
   border-left: 1px solid $text-secundary-clr;
 }
 .right-flex {
-  flex: 2 0 31%;
   height: 100%;
-  width: 100%;
+  width: 65%;
   position: sticky;
   top: 0;
   display: flex;
@@ -681,5 +678,53 @@ ul {
   }
   .footer-copyright {
     align-self: flex-start;
+  }
+}
+
+/* MEDIA QUERIS */
+@media screen and (max-width: 1200px) {
+  .MainLeft-link {
+    display: none;
+  }
+  .MainLeft {
+    width: auto;
+    a.tweet-btn {
+      width: auto;
+      .text {
+        display: none;
+      }
+      ion-icon {
+        display: inline-block;
+        color: $text-primary-clr;
+        font-size: 1.5rem;
+      }
+    }
+    &-profile-btn {
+      width: auto;
+      .MainLeft-profile-info {
+        div {
+          display: none;
+        }
+      }
+      .MainLeft-option-icon {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-flex {
+    max-width: 50rem;
+    padding-right: 10px;
+    .right-flex {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .left-flex {
+    display: none;
   }
 }

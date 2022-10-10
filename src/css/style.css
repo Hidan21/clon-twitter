@@ -35,7 +35,6 @@ ul {
 }
 
 .left-flex {
-  flex: 1 0 22%;
   height: 100%;
   position: sticky;
   top: 0;
@@ -46,15 +45,13 @@ ul {
 }
 
 .center-flex {
-  flex: 3 0 45%;
   border-right: 1px solid rgb(115, 129, 141);
   border-left: 1px solid rgb(115, 129, 141);
 }
 
 .right-flex {
-  flex: 2 0 31%;
   height: 100%;
-  width: 100%;
+  width: 65%;
   position: sticky;
   top: 0;
   display: flex;
@@ -654,6 +651,50 @@ ul {
 }
 .right-footer .footer-copyright {
   align-self: flex-start;
+}
+
+/* MEDIA QUERIS */
+@media screen and (max-width: 1200px) {
+  .MainLeft-link {
+    display: none;
+  }
+  .MainLeft {
+    width: auto;
+  }
+  .MainLeft a.tweet-btn {
+    width: auto;
+  }
+  .MainLeft a.tweet-btn .text {
+    display: none;
+  }
+  .MainLeft a.tweet-btn ion-icon {
+    display: inline-block;
+    color: rgb(247, 249, 249);
+    font-size: 1.5rem;
+  }
+  .MainLeft-profile-btn {
+    width: auto;
+  }
+  .MainLeft-profile-btn .MainLeft-profile-info div {
+    display: none;
+  }
+  .MainLeft-profile-btn .MainLeft-option-icon {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main-flex {
+    max-width: 50rem;
+    padding-right: 10px;
+  }
+  .main-flex .right-flex {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .left-flex {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
